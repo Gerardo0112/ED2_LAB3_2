@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ED2_LAB3_2.Controllers;
+using ED2_LAB3_2.Models;
 
 namespace ED2_LAB3_2.Controllers
 {
@@ -11,26 +13,40 @@ namespace ED2_LAB3_2.Controllers
     public class ValuesController : ControllerBase
     {
         // GET api/values
+        public BTree tree = new BTree();
+        public Path path = new Path();
+        public BSearch search = new BSearch();
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            var content = "Ingresar" + path.InOrder();
+            return content;
         }
-
         // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [Route("SearchItem")]
+        [HttpGet]
+        public string Get([FromBody] string brandNew)
         {
-            return "value";
-        }
+            string found;
+            var searchedItem = search.Search(brandNew);
 
+            if (searchedItem != null)
+            {
+                found = "Name: " + searchedItem.Name + "\n" + "Flavor: " + searchedItem.Flavor + "\n" + "Volume: " + searchedItem.Volume + "\n" + "Price: " + searchedItem.Price + "Producer House: " + searchedItem.Producer_House;
+            }
+            else
+            {
+                found = "ERROR, NOT FOUND";
+            }
+            return found;
+        }
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Soda item)
         {
+            tree.insert(item);
         }
-
-        // PUT api/values/5
+        /*// PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
@@ -40,6 +56,6 @@ namespace ED2_LAB3_2.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
+        }*/
     }
 }
