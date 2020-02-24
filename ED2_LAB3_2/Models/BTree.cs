@@ -11,6 +11,9 @@ namespace ED2_LAB3_2.Models
         //Arbol B* en disco
         public List<Soda> soda = new List<Soda>();
         public Node node;
+        public static int grade = 5;
+        public Node root = null;
+        public int number = 0;
 
         public void insert(Soda info)
         {
@@ -208,6 +211,17 @@ namespace ED2_LAB3_2.Models
                     }
                 }
             }
+        }
+        public void Disc()
+        {
+            StreamWriter TreeText = new StreamWriter(@"c:\Users\Gerardo\Desktop\Gerardo\URL\5to Ciclo\Estructura de Datos II\ED2_LAB3_2\Arbol.txt");
+            TreeText.WriteLine("Grado " + grade);
+            TreeText.WriteLine("Raiz " + root);
+            TreeText.WriteLine("Proxima posicion " + number);
+
+            
+
+
         }
     }
 }
