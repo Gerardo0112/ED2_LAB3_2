@@ -219,8 +219,32 @@ namespace ED2_LAB3_2.Models
             TreeText.WriteLine("Raiz " + root);
             TreeText.WriteLine("Proxima posicion " + number);
 
-            
+            foreach (var NodeList in soda)
+            {
+                if (NodeList.Name == null)
+                {
+                    TreeText.Write(NodeList.Name + "|0|");
+                }
+                else
+                {
+                    TreeText.Write(NodeList.Name + "|" + NodeList.Name + "|");
+                }
+                if (NodeList.Flavor == null)
+                {
 
+                }
+
+                foreach (var values in soda)
+                {
+                    TreeText.Write(values.Name + "|");
+                    TreeText.Write(values.Flavor + "|");
+                    TreeText.Write(values.Price + "|");
+                    TreeText.Write(values.Volume + "|");
+                    TreeText.Write(values.Producer_House + "|");
+                }
+                TreeText.Write("\n");
+            }
+            TreeText.Close();
 
         }
     }

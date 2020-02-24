@@ -9,6 +9,7 @@ namespace ED2_LAB3_2.Models
     public class Path
     {
         public List<Soda> soda = new List<Soda>();
+        public List<Node> noder = new List<Node>();
         public Node node;
         public string InOrder()
         {
