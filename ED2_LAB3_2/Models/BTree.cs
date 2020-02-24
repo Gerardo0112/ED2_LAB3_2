@@ -231,7 +231,16 @@ namespace ED2_LAB3_2.Models
                 }
                 if (NodeList.Flavor == null)
                 {
-
+                    string son = string.Empty;
+                    for(int i = 0; i <grade; i++)
+                    {
+                        son = son + "0|";
+                    }
+                    TreeText.Write(son);
+                }
+                else
+                {
+                    TreeText.Write("|0");
                 }
 
                 foreach (var values in soda)

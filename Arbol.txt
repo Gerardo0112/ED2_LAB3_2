@@ -1,0 +1,7 @@
+Orden 5
+Raiz 0
+0|0|2|3|0|0|0|p|delicioso|20.5|30|Guatemala|
+2|0|0|0|0|0|0|c|delicioso|21.5|30|Guatemala|g|delicioso|20.5|30|Guatemala|f|delicioso|22.5|30|Guatemala|
+3|0|0|0|0|0|0|m|delicioso|22.5|30|Guatemala|s|delicioso|21.5|30|Guatemala|c|delicioso|20.5|30|Guatemala|
+
+
